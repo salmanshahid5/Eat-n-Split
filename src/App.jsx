@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import FriendList from "./Components/FriendList/FriendList";
+import AddFriend from "./Components/FriendList/AddFriend/Addfriend";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [friends, setFriends] = useState([
+    {
+      name: "Salman",
+      balance: 10,
+      img: "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp",
+    },
+    {
+      name: "Yasir",
+      balance: 7,
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbsB8JQHddPH1KvZYLJAUfjFJ5FTr9jd0wsn2mB968OxOaNP_IZSUEP_yo_Aii4GvQ9Zg&usqp=CAU",
+    },
+    {
+      name: "Umer",
+      balance: -5,
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiSOVbczZ77VRyMfk0ZqxmSKNg-4VRzunINHjAPtWn42U_WqoOnaur-d73kx-pP1EWV0w&usqp=CAU",
+    },
+  ]);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="mainApp">
+      <FriendList friendList={friends} setFriendList={setFriends} />
+      <AddFriend friendList={friends} setFriendList={setFriends} />
+    </div>
+  );
 }
 
-export default App
+export default App;
