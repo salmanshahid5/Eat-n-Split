@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FriendList from "./Components/FriendList/FriendList";
 import AddFriend from "./Components/FriendList/AddFriend/Addfriend";
+import Split from "./Components/SplitFrom/split";
 
 function App() {
   const [friends, setFriends] = useState([
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="mainApp">
       <FriendList friendList={friends} setFriendList={setFriends} />
+      <Split />
       <AddFriend friendList={friends} setFriendList={setFriends} />
     </div>
   );

@@ -1,6 +1,6 @@
 function Split(){
  return(
-    <form>
+    <form className="form-split-bill">
         <h2>Split a bill with salman</h2>
         <label>💰 Bill value:</label>
         <input type="text" />
@@ -13,7 +13,7 @@ function Split(){
             <option>You</option>
             <option>Salman</option>
         </select>
-        <button>Split bill</button>
+        <button className="button">Split bill</button>
     </form>
  )
 }

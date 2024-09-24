@@ -24,7 +24,7 @@ function Friend({ name, balance, img }) {
         <h1>{name}</h1>
         <p>{balance}</p>
       </div>
-      <button >Select</button>
+      <button>Select</button>
     </div>
   );
 }
