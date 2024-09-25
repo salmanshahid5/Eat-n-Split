@@ -22,7 +22,17 @@ function Friend({ name, balance, img }) {
       </div>
       <div>
         <h1>{name}</h1>
-        <p>{balance}</p>
+        {balance < 0 && (
+        <p className="red">
+          You owe {name} {Math.abs(balance)}€
+        </p>
+      )}
+      {balance > 0 && (
+        <p className="green">
+          {name} owes you {Math.abs(balance)}€
+        </p>
+      )}
+      {balance === 0 && <p>You and {name} are even</p>}
       </div>
       <button>Select</button>
     </div>
